@@ -87,7 +87,8 @@ class PostList extends Component {
             date: '04 Jun 2019',
             content:
               'Que maaaaaassa! Estou pensando em me inscrever na próxima turma pra ver qual é desse Bootcamp GoStack, dizem que os devs saem de lá com super poderes'
-          }
+          },
+          
         ]
       }
     ]
@@ -96,7 +97,10 @@ class PostList extends Component {
   render() {
     const { posts } = this.state;
 
-    return (<div className="postlist"><PostItem /></div>
+    return (
+    <div className="postlist">
+      {posts.map(post => (<PostItem key={post.id} {...post} /> ))} 
+    </div>
     );
   }
 }
